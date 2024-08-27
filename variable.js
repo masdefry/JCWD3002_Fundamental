@@ -9,7 +9,7 @@ Baris 03
 */
 
 // >>>>> VARIABLE <<<<<
-// Digunakan untuk menyimpan data
+// Digunakan untuk Menyimpan Data
 
 // console.log('Hello, Dunia')
 // console.log('Hello, Dunia')

@@ -1,5 +1,5 @@
 // >>>>> DATA TYPES <<<<<
-// Dibagi menjadi 2: Primitive & Non Primitive
+// Dibagi Menjadi 2: Primitive & Non Primitive
 
 // >>>>> Primitive Data Type <<<<<
 // String: Valuenya dibungkus dengan '', "", ``

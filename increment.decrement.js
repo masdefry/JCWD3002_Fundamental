@@ -22,8 +22,6 @@ studentExam += '1' // '901'
 studentExam++ // 902
 console.log(studentExam)
 
-
-
 let level = 1
 level++ // 2
 level += '104' // '2104'
