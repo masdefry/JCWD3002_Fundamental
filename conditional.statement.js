@@ -73,27 +73,46 @@ if(nilaiSiswa > 60){ // TRUE
 
 
 // 4. Ternary Operator
-const studentExamScore = 81
+// const studentExamScore = 81
 
-if(studentExamScore > 80){
-    console.log('Grade A')
-}else if(studentExamScore >= 70){
-    console.log('Grade B')
-}else if(studentExamScore >= 60){
-    console.log('Grade C')
-}else{
-    console.log('Grade D')
-}
+// if(studentExamScore > 80){
+//     console.log('Grade A')
+// }else if(studentExamScore >= 70){
+//     console.log('Grade B')
+// }else if(studentExamScore >= 60){
+//     console.log('Grade C')
+// }else{
+//     console.log('Grade D')
+// }
+
+// /*
+//     Syntax:
+//     condition? TRUE : FALSE
+// */
+
+// studentExamScore > 80? 
+// console.log('Grade A') : 
+// studentExamScore >= 70? 
+// console.log('Grade B') : 
+// studentExamScore >= 60? 
+// console.log('Grade C') : 
+// console.log('Grade D')
+
+
 
 /*
-    Syntax:
-    condition? TRUE : FALSE
+    Score >= 85 : LULUS
+    Score >= 70  : LULUS BERSYARAT
+    Score < 70  : REMEDIAL
 */
+const nilai = 100
 
-studentExamScore > 80? 
-console.log('Grade A') : 
-studentExamScore >= 70? 
-console.log('Grade B') : 
-studentExamScore >= 60? 
-console.log('Grade C') : 
-console.log('Grade D')
+if(nilai >= 85){
+    console.log('LULUS')
+}else if(nilai >= 70){
+    console.log('LULUS BERSYARAT')
+}else{
+    console.log('REMEDIAL')
+}
+
+nilai >= 85? console.log('LULUS') : nilai >= 70?  console.log('LULUS BERSYARAT') : console.log('REMEDIAL')
