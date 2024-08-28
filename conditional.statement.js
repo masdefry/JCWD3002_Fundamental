@@ -42,6 +42,37 @@ if(studentExam > 80){ // 80 > 80? FALSE
 // >= 70 : B
 // >= 60 : C
 // < 60  : D
+// const studentExamScore = 81
+
+// if(studentExamScore > 80){
+//     console.log('Grade A')
+// }else if(studentExamScore >= 70){
+//     console.log('Grade B')
+// }else if(studentExamScore >= 60){
+//     console.log('Grade C')
+// }else{
+//     console.log('Grade D')
+// }
+
+
+
+const nilaiSiswa = 90
+if(nilaiSiswa > 90){ // FALSE
+    console.log('Lulus Baik')
+}
+
+if(nilaiSiswa > 70){ // TRUE
+    console.log('Lulus')
+}
+
+if(nilaiSiswa > 60){ // TRUE
+    console.log('Tidak Lulus')
+}else{
+    console.log('Undefined')
+}
+
+
+// 4. Ternary Operator
 const studentExamScore = 81
 
 if(studentExamScore > 80){
@@ -53,3 +84,16 @@ if(studentExamScore > 80){
 }else{
     console.log('Grade D')
 }
+
+/*
+    Syntax:
+    condition? TRUE : FALSE
+*/
+
+studentExamScore > 80? 
+console.log('Grade A') : 
+studentExamScore >= 70? 
+console.log('Grade B') : 
+studentExamScore >= 60? 
+console.log('Grade C') : 
+console.log('Grade D')
