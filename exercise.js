@@ -1,117 +1,19 @@
 /*
-    Tampilkan Setiap Digit Phone Number dengan Parameter Input:
-    const phoneNumber = 6281335719893
-
-    Output di Terminal:
-    6
-    2
-    8
-    1
-    3
-    3
-    5
-    7
-    1
-    9
-    8
-    9
-    3
-*/
-
-const phoneNumber = 6281335719893
-const phoneNumberToString = phoneNumber.toString()
-
-let start = 0
-while(start < phoneNumberToString.length){
-    console.log(phoneNumberToString[start])
-    start++
-}
-
-
-
-/*
-    Buatlah Program dengan Menggunakan Looping untuk Memvalidasi 
-    Setiap Digit Phone Number
-
-    Input   : '6281214186000'
-    Output  : Phone Number is Valid
-
-    Input   : '62813357abc198'
-    Output  : Phone Number is Not Valid
-*/
-
-const input = '6281335719' // 0 - 13
-let isValid = true
-for(let i=0; i <= input.length-1; i++){
-    if(isNaN(Number(input[i])) === true){ // Hanya untuk pengecekan huruf
-        isValid = false
-        break;
-    }
-}
-if(isValid === true){
-    console.log('Phone Number is Valid')
-}else{
-    console.log('Phone Number Invalid')
-}
-
-
-
-/*
-    Buatlah Program dengan Menggunakan Looping untuk Menghitung Jumlah
-    Huruf 'a' Ataupun 'A' dari Sebuah Paragraph
-
-    Input   : 'Purwadhika Digital School'
-    Output  : Jumlah A Sebanyak 3
-
-    Input   : 'BSD'
-    Output  : Jumlah A Sebanyak 0
-*/
-
-const text = 'Purwadhika Digital School'
-let count = 0
-for(let i=0; i <= text.length-1; i++){
-   if(text[i] == 'a' || text[i] == 'A'){
-    count++
-   }
-}
-
-console.log(`Jumlah a or A Sebanyak ${count}`)
-console.log('Jumlah A or a Sebanyak ' + count)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
     Buatlah Program dengan Menggunakan Looping untuk Menghitung Jumlah
     Huruf Vokal dari Sebuah Paragraph
 
     Input   : 'Purwadhika'
     Output  : Jumlah Huruf Vokal Sebanyak 4
 */
+const text = 'Purwadhika'
+let count = 0
+for(let i=0; i <= text.length-1; i++){
+    if(text[i].toLowerCase() === 'a' || text[i].toLowerCase() === 'i' || text[i].toLowerCase() === 'u' || text[i].toLowerCase() === 'e' || text[i].toLowerCase() === 'o'){
+        count++
+    }
+}
+console.log('Jumlah Huruf Vokal Sebanyak ' + count)
+console.log(`Jumlah Huruf Vokal Sebanyak ${count}`)
 
 /*
     Buatlah Program dengan Menggunakan Looping untuk Menentukan Suatu Kata
@@ -128,3 +30,148 @@ console.log('Jumlah A or a Sebanyak ' + count)
     Input   : 'Katak'
     Output  : Katak Adalah Palindrome
 */
+
+// #01
+// const input = 'Katak'
+// let inputReverse = ''
+// for(let i=input.length-1; i >= 0; i--){
+//     inputReverse += input[i]
+// }
+
+// if(input.toLowerCase() == inputReverse.toLowerCase()){
+//     console.log('Palindrome')
+// }else{
+//     console.log('Not Palindrome')
+// }
+
+// #02
+const input = 'Katak'
+const middle = input.length/2
+let isPalindrome = true
+for(let i=0; i < middle; i++){
+    if(input[i] !== input[input.length-i-1]){
+        isPalindrome = false 
+        break;
+    }
+}
+
+if(isPalindrome === true){
+    console.log('Is Palindrome')
+}else{
+    console.log('Not Palindrome')
+}
+
+// >>>>> DAY-02 <<<<<
+/*
+    Odd or Even
+*/
+const number = 25
+
+if(number % 2 === 0){
+    console.log('Even Number')
+}else{
+    console.log('Odd Number')
+}
+
+/*
+    Prime or Not 
+*/
+{
+    const num = 10
+    const mid = num/2
+    let isPrime = true 
+    for(let i=2; i < mid; i++){
+        if(num % i === 0){
+            isPrime = false
+            break;
+        }
+    }
+
+    if(isPrime === true){
+        console.log(`${num} Adalah Bilangan Prima`)
+    }else{
+        console.log(`${num} Bukan Bilangan Prima`)
+    }
+}
+
+
+/*
+    Sum Number 1 to N
+*/
+{
+    const number = 5
+    let total = 0
+    for(let i=1; i <= number; i++){
+        total += i 
+    }
+    console.log(total)
+}
+
+/*
+    Factorial
+*/
+{
+    const number = 5
+    let total = 1
+    for(let i=1; i <= number; i++){
+        total *= i 
+    }
+    console.log(total)
+}
+
+/*
+    Print N First Fibonacci
+*/
+{
+    let firstFibo = 1
+    let secondFibo = 1
+
+    for(let i=3; i <= 15; i++){
+        var nextFibo = firstFibo + secondFibo // 0 + 1
+        firstFibo = secondFibo;
+        secondFibo = nextFibo;
+    }
+
+    console.log(nextFibo)
+}
+
+/*
+    Currency
+*/
+
+const price = 100000
+console.log(`Rp.${price.toLocaleString('id-ID')}`)
+
+{
+    const price = 100000000000000000
+    const priceToString = price.toString()
+    let formattedPrice = ''
+    let count = 0
+    for(let i=priceToString.length-1; i >= 0; i--){
+        count++
+        if(count === 3){
+            formattedPrice += priceToString[i] + '.'
+            count = 0
+        }else{
+            formattedPrice += priceToString[i]
+        }
+    }
+    console.log(formattedPrice)
+}
+
+{
+    const text = 'hello, world!'
+    let outputText = ''
+
+    for(let i=0; i <= text.length-1; i++){
+        if(i === 0){
+            outputText += text[i].toUpperCase()
+        }else if(text[i-1] === ' '){
+            outputText += text[i].toUpperCase()
+        }else{
+            outputText += text[i]
+        }
+    }
+
+    console.log(outputText)
+}
