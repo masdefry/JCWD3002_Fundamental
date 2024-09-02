@@ -141,4 +141,5 @@ function Output(result){
 
 const resultPenjumlahan = Penjumlahan(3, 5)
 Output(resultPenjumlahan)
-Pengurangan(10, 3)
+const resultPengurangan = Pengurangan(10, 3)
+Output(resultPengurangan)
