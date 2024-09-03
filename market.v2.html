@@ -3,13 +3,29 @@
     // const prices = [10000, 15000, 20000]
     // const stocks = [10, 15, 20]
 
-    const products = [['Apel', 10000, 10], ['Jeruk', 15000, 15], ['Anggur', 20000, 20]]
+    const products = [
+        {
+            name: 'Apel', 
+            price: 10000, 
+            stock: 10,
+        },
+        {
+            name: 'Anggur', 
+            price: 15000, 
+            stock: 15
+        },
+        {
+            name: 'Jeruk', 
+            price: 20000, 
+            stock: 20
+        }
+    ]
 
     let print = ''
 
     // index + 1 digunakan untuk Penomoran User. Sehingga Penomoran yang Muncul Start 1
     products.forEach((item, index) =>{
-        print += `${index+1}. ${item[0]} \n`
+        print += `${index+1}. ${item.name} \n`
     })
     
     // Transform Penomoran User Menjadi Penomoran Index (Mangkanya Langsung di Minus 1)
@@ -18,9 +34,9 @@
     
         if(selectedProduct >= 0 && selectedProduct < products.length){
             alert(`
-                ${products[selectedProduct][0]} \n
-                ${products[selectedProduct][1]} \n
-                ${products[selectedProduct][2]}
+                ${products[selectedProduct].name} \n
+                ${products[selectedProduct].price} \n
+                ${products[selectedProduct].stock}
             `)
         }
     }while(selectedProduct > products.length-1)
