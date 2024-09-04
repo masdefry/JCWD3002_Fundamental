@@ -64,41 +64,43 @@ class Transaction{
     carts = [];
 
     addToCart(selectedProduct, qty){
-        let findItem = false
         let indexFindItem
+        
+        // Update Total
+        this.total += selectedProduct.price * qty 
+
         if(this.carts.length === 0){
             this.carts.push({...selectedProduct, qty})
         }else{
             this.carts.forEach((item, index) => {
                 if(item.name === selectedProduct.name){
-                    findItem = true
                     indexFindItem = index
                 }
             })  
 
-            if(findItem === true){ // Apabila Item yang dicari ADA
+            if(indexFindItem !== undefined){ // Apabila Item yang dicari ADA
                 this.carts[indexFindItem].qty += qty
-            }else if(findItem === false){ // Apabila Item yang dicari TIDAK ADA
+            }else if(indexFindItem === undefined){ // Apabila Item yang dicari TIDAK ADA
                 this.carts.push({...selectedProduct, qty})
             }
         }
     } 
 
     showCarts(){
-        console.log(this.carts)
+        return this.carts
+    }
+
+    showTotal(){
+        return this.total
     }
 }
 
 const newTransaction = new Transaction()
 newTransaction.addToCart(products[0], 1)
 newTransaction.addToCart(products[1], 1)
-newTransaction.addToCart(products[0], 1)
-newTransaction.addToCart(products[1], 1)
-newTransaction.addToCart(products[2], 1)
-newTransaction.addToCart(products[2], 1)
-newTransaction.addToCart(products[2], 1)
 // console.log(newTransaction.carts)
-newTransaction.showCarts()
+console.log(newTransaction.showCarts())
+console.log(newTransaction.showTotal())
 
 
 
