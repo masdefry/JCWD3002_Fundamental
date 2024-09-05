@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="show-result">
+
+    </h1>
+    <div id="button-calc">
+
+    </div>
+    <button onclick="OnPressButton('+')">
+        +
+    </button>
+    <button onclick="OnPressButton('=')">
+        =
+    </button>
+</body>
+</html>
+
+<script>
+    function OnPressButton(item){
+        if(item !== '='){
+            document.getElementById('show-result').innerHTML += item
+        }else if(item === '='){
+            // Lakukang Perhitungan
+            let currentResult = document.getElementById('show-result').innerHTML // '12+12' ---> ['12', '12']
+            const total = currentResult.split('+').reduce((acc, current) => Number(acc) + Number(current))
+            document.getElementById('show-result').innerHTML = total
+        }
+    }
+
+    function GenerateButton(){
+        const arrCalc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+        let print = ''
+
+        arrCalc.forEach(item => {
+            print += `
+                <button onclick="OnPressButton(${item})">
+                    ${item}
+                </button>
+            `
+        })
+
+        document.getElementById('button-calc').innerHTML =  print
+    }
+
+    GenerateButton()
+</script>
