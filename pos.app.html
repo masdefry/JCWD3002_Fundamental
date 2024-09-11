@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS APP</title>
+</head>
+<body>
+    <div id="show-menu">
+
+    </div>
+</body>
+</html>
+
+<script>
+    const menus = [
+        {
+            id: 1, 
+            name: 'Iced Americano', 
+            price: 21000
+        }, 
+        {
+            id: 2, 
+            name: 'Iced Classic Latte', 
+            price: 24000
+        },
+        {
+            id: 3, 
+            name: 'Nutty Oat Latte', 
+            price: 24000
+        }
+    ]
+
+    function ShowMenus(){
+        let print = ''
+        menus.forEach((item, index) => {
+            print += `
+                ${index+1}. ${item.name}: ${item.price} <button>Add</button> <br>
+            `
+        })
+
+        document.getElementById('show-menu').innerHTML = print
+    }
+
+    ShowMenus()
+</script>
