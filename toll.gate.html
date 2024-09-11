@@ -1,0 +1,88 @@
+<script>
+    // const tollGates = ['surabaya', 'ngawi', 'solo', 'semarang', 'cikampek']
+    // const tollPrices = [
+    //     {
+    //         mobil: 190000, 
+    //         bus: 203500, 
+    //         truck: 235000
+    //     }, 
+    //     {
+    //         mobil: 75000, 
+    //         bus: 80500, 
+    //         truck: 90000
+    //     },
+    //     {
+    //         mobil: 35000, 
+    //         bus: 40000, 
+    //         truck: 43000
+    //     }, 
+    //     {
+    //         mobil: 305000, 
+    //         bus: 310000, 
+    //         truck: 350000
+    //     }
+    // ]
+
+    // let enterGate = prompt('Enter Gate:').toLowerCase() // Text
+    // let exitGate =  prompt('Exit Gate:').toLowerCase() // Text
+    // let printVehicle = ''
+    // Object.keys(tollPrices[0]).forEach((item, index) => { // [mobil, bus, truck]
+    //     printVehicle += `${index+1}. ${item} \n`
+    // })
+    // let vehicleType = Number(prompt(printVehicle))-1 
+
+    // // Menentukan Index dari Enter Gate
+    // let indexOfEnterGate = tollGates.indexOf(enterGate)
+
+    // // Menentukan Index dari Exit Gate
+    // let total = 0
+    // let indexOfExitGate = tollGates.indexOf(exitGate)
+
+    // if(indexOfEnterGate < indexOfExitGate){
+    //     // Depan - Belakang
+    //     for(let i=indexOfEnterGate; i<indexOfExitGate; i++){
+    //         total += tollPrices[i][Object.keys(tollPrices[0])[vehicleType]]
+    //     }
+    // }else{
+    //     // Belakang - Depan
+    // }
+    // alert(total)
+    const tollGates = ['surabaya', 'ngawi', 'solo', 'semarang', 'cikampek']
+    const carPrices = [190000, 75000, 35000, 305000]
+    const busPrices = [203500, 80500, 40000, 310000]
+    const truckPrices = [235000, 90000, 43000, 335000]
+
+    let enterGate = prompt('Enter Gate:').toLowerCase() // Text
+    let exitGate =  prompt('Exit Gate:').toLowerCase() // Text
+    let vehicleType = prompt(`1. Mobil \n 2. Bus \n 3. Truck`)
+
+    let indexOfEnterGate = tollGates.indexOf(enterGate)
+    let indexOfExitGate = tollGates.indexOf(exitGate)
+
+    let total = 0
+    if(indexOfEnterGate < indexOfExitGate){
+       for(let i=indexOfEnterGate; i<indexOfExitGate; i++){
+        if(vehicleType == 1){
+            total += carPrices[i]
+        }else if(vehicleType == 2){
+            total += busPrices[i]
+        }else{
+            total += truckPrices[i]
+        }
+       }
+    }else{
+        for(let i=indexOfEnterGate; i>indexOfExitGate; i--){
+            if(vehicleType == 1){
+                total += carPrices[i]
+            }else if(vehicleType == 2){
+                total += busPrices[i]
+            }else{
+                total += truckPrices[i]
+            }
+       }
+    }
+
+
+
+    const tollRoads = ['Surabaya', {'mobil': 10000, 'truck': 10000, 'bus': 10000}, 'Ngawi']
+</script>
