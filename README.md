@@ -1,1 +1,0 @@
-Hello, JCWD3002!
