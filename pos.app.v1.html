@@ -12,6 +12,10 @@
 </body>
 </html>
 
+
+
+
+
 <script>
     const menus = [
         {
@@ -31,16 +35,16 @@
         }
     ]
 
-    function ShowMenus(){
-        let print = ''
+    function ShowMenu(){
+        let display = ''
         menus.forEach((item, index) => {
-            print += `
-                ${index+1}. ${item.name}: ${item.price} <button>Add</button> <br>
+            display += `
+                ${index+1}. ${item.name}: Rp.${item.price.toLocaleString('id-ID')} <button>Add</button> <br>
             `
         })
 
-        document.getElementById('show-menu').innerHTML = print
+        document.getElementById('show-menu').innerHTML = display
     }
 
-    ShowMenus()
+    ShowMenu()
 </script>
