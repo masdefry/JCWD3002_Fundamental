@@ -6,6 +6,19 @@
     <title>POS APP</title>
 </head>
 <body>
+    <h1>
+        Cart(s)
+    </h1>
+    <h3>
+        Rp. 0
+    </h3>
+    <div id="show-cart">
+
+    </div>
+    <hr /> 
+    <h1>
+        Menu
+    </h1>
     <div id="show-menu">
 
     </div>
@@ -35,11 +48,13 @@
         }
     ]
 
+    const carts = []
+
     function ShowMenu(){
         let display = ''
         menus.forEach((item, index) => {
             display += `
-                ${index+1}. ${item.name}: Rp.${item.price.toLocaleString('id-ID')} <button>-</button><span id="qty-${item.id}">1</span><button onclick="UpdateQty(${item.id})">+</button> <button>Add</button> <br>
+                ${index+1}. ${item.name}: Rp.${item.price.toLocaleString('id-ID')} <button onclick="UpdateQty(${item.id}, '-')">-</button><span id="qty-${item.id}">1</span><button onclick="UpdateQty(${item.id}, '+')">+</button> <button onclick="AddToCart(${item.id})">Add</button> <br>
             `
         })
 
@@ -48,9 +63,29 @@
 
     ShowMenu()
 
-    function UpdateQty(id){
+    function UpdateQty(id, operator){
         let currentItem = document.getElementById(`qty-${id}`).innerHTML
-        currentItem++
+        if(operator === '+'){
+            currentItem++
+        }else if(operator === '-' && currentItem > 1){
+            currentItem--
+        }
         document.getElementById(`qty-${id}`).innerHTML = currentItem
+    }
+
+    function AddToCart(id){
+        // Find Menu by Id
+        menus.forEach(item =>{
+            if(item.id === id){
+                carts.push({...item, qty: document.getElementById(`qty-${item.id}`).innerHTML})
+            }
+        })
+        
+        let display = ''
+        carts.forEach(item => {
+            display += `${item.name}: ${item.price}x${item.qty} = ${item.price*item.qty} <br>`
+        })
+
+        document.getElementById('show-cart').innerHTML = display
     }
 </script>
