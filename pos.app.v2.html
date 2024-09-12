@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS APP</title>
+</head>
+<body>
+    <div id="show-menu">
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+<script>
+    const menus = [
+        {
+            id: 1, 
+            name: 'Iced Americano', 
+            price: 21000
+        }, 
+        {
+            id: 2, 
+            name: 'Iced Classic Latte', 
+            price: 24000
+        },
+        {
+            id: 3, 
+            name: 'Nutty Oat Latte', 
+            price: 24000
+        }
+    ]
+
+    function ShowMenu(){
+        let display = ''
+        menus.forEach((item, index) => {
+            display += `
+                ${index+1}. ${item.name}: Rp.${item.price.toLocaleString('id-ID')} <button>-</button><span id="qty-${item.id}">1</span><button onclick="UpdateQty(${item.id})">+</button> <button>Add</button> <br>
+            `
+        })
+
+        document.getElementById('show-menu').innerHTML = display
+    }
+
+    ShowMenu()
+
+    function UpdateQty(id){
+        let currentItem = document.getElementById(`qty-${id}`).innerHTML
+        currentItem++
+        document.getElementById(`qty-${id}`).innerHTML = currentItem
+    }
+</script>
